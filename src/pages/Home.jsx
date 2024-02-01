@@ -1,0 +1,37 @@
+import styled from 'styled-components';
+
+import { Logo, Span } from '../ui/Header';
+import Form from '../ui/Form';
+
+const StyledHome = styled.div`
+  height: 100dvh;
+  padding: 15rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
+const HomeLogo = styled(Logo)`
+  font-size: 15rem;
+  cursor: default;
+`;
+
+const Subtitle = styled.p`
+  font-size: 2.5rem;
+  margin-bottom: 6rem;
+`;
+
+function Home() {
+  return (
+    <StyledHome>
+      <HomeLogo>
+        test<Span>IT</Span>
+      </HomeLogo>
+      <Subtitle>Test your knowledge about Web Development 🧑‍💻</Subtitle>
+      <Form />
+    </StyledHome>
+  );
+}
+
+export default Home;

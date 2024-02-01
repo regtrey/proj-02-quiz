@@ -1,0 +1,37 @@
+import { createContext, useContext } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { questions } from '../data/questions';
+
+const QuestionContext = createContext();
+
+const numQuestions = questions.length;
+
+function QuestionProvider({ children }) {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const curPage = Number(searchParams.get('question')) || 1;
+  const curQuestion = questions[curPage - 1];
+
+  return (
+    <QuestionContext.Provider
+      value={{
+        numQuestions,
+        curPage,
+        curQuestion,
+        searchParams,
+        setSearchParams,
+      }}
+    >
+      {children}
+    </QuestionContext.Provider>
+  );
+}
+
+function useQuestion() {
+  const context = useContext(QuestionContext);
+  if (context === 'undefined')
+    throw new Error('Question context was used outside of the provider');
+  return context;
+}
+
+export { QuestionProvider, useQuestion };

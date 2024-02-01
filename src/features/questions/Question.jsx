@@ -1,0 +1,43 @@
+import styled from 'styled-components';
+import { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { useQuestion } from '../../context/QuestionContext';
+
+import AnswersList from './AnswersList';
+
+const StyledQuestionContainer = styled.main`
+  height: 100%;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+const QuestionItem = styled.h2`
+  width: 80vw;
+  font-size: 4rem;
+  margin: 0 auto;
+`;
+
+function Question() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { curQuestion } = useQuestion();
+
+  const { id, question } = curQuestion;
+
+  useEffect(function () {
+    searchParams.set('question', 1);
+    setSearchParams(searchParams);
+  }, []);
+
+  return (
+    <StyledQuestionContainer>
+      <QuestionItem>
+        {id}. {question}
+      </QuestionItem>
+      <AnswersList />
+    </StyledQuestionContainer>
+  );
+}
+
+export default Question;
