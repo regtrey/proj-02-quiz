@@ -65,7 +65,7 @@ const GlobalStyles = createGlobalStyle`
 
     a:active,
     a:visited {
-        color: inherit;
+        color: #000;
     }
 `;
 
