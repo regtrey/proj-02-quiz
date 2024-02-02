@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/page-not-found"
+      "destination": "/"
     }
   ]
 }
