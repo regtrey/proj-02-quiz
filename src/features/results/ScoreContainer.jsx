@@ -16,6 +16,7 @@ const StyledScoreContainer = styled.div`
   @media screen and (max-width: 768px) {
     width: 80vw;
     padding: 3rem 0;
+    margin-bottom: 2rem;
   }
 `;
 
