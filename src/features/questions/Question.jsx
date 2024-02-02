@@ -25,12 +25,12 @@ const QuestionItem = styled.h2`
 
 function Question() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const { curQuestion } = useQuestion();
+  const { curQuestion, curPage } = useQuestion();
 
   const { id, question } = curQuestion;
 
   useEffect(function () {
-    searchParams.set('question', 1);
+    searchParams.set('question', curPage || 1);
     setSearchParams(searchParams);
   }, []);
 

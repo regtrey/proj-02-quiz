@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { questions } from '../data/questions';
 
@@ -8,10 +8,21 @@ const numQuestions = questions.length;
 
 function QuestionProvider({ children }) {
   const [searchParams, setSearchParams] = useSearchParams();
+
   const [name, setName] = useState('');
+  const [hasError, setHasError] = useState(false);
 
   const curPage = Number(searchParams.get('question')) || 1;
-  const curQuestion = questions[curPage - 1];
+  const curQuestion =
+    curPage > numQuestions ? questions[0] : questions[curPage - 1];
+
+  useEffect(
+    function () {
+      setHasError(false);
+      if (!name || curPage > numQuestions) setHasError(true);
+    },
+    [name, curPage]
+  );
 
   return (
     <QuestionContext.Provider
@@ -23,6 +34,8 @@ function QuestionProvider({ children }) {
         setSearchParams,
         name,
         setName,
+        hasError,
+        setHasError,
       }}
     >
       {children}

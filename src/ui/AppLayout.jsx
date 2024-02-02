@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { Outlet } from 'react-router-dom';
+import { useQuestion } from '../context/QuestionContext';
+import Error from './Error';
 
 const StyledAppLayout = styled.div`
   height: 100dvh;
@@ -8,6 +10,10 @@ const StyledAppLayout = styled.div`
 `;
 
 function AppLayout() {
+  const { hasError } = useQuestion();
+
+  if (hasError) return <Error />;
+
   return (
     <StyledAppLayout>
       <Outlet />

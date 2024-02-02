@@ -52,7 +52,7 @@ const Detail = styled.h4`
   }
 `;
 
-const maxTime = 70;
+const maxTime = 300;
 
 function Details() {
   const [time, setTime] = useState(maxTime);
@@ -63,7 +63,6 @@ function Details() {
 
   const minutes = time === 60 ? 1 : Math.floor(time / 60);
   const seconds = time % 60 === 0 ? 0 : time % 60;
-  console.log(time);
 
   useEffect(
     function () {

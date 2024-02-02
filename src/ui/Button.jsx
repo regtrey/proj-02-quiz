@@ -6,6 +6,12 @@ const sizes = {
     border-radius: 8px;
     padding: 1rem;
   `,
+  medium: css`
+    width: 30rem;
+    font-size: 2rem;
+    border-radius: 6px;
+    padding: 1.6rem;
+  `,
   large: css`
     width: 40rem;
     font-size: 2.2rem;
