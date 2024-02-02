@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://proj-02-quiz.vercel.app/page-not-found"
+      "destination": "/page-not-found"
     }
   ]
 }
