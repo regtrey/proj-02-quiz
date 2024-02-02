@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/page-not-found"
+      "source": "*",
+      "destination": "https://proj-02-quiz.vercel.app/page-not-found"
     }
   ]
 }
