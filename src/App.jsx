@@ -23,6 +23,7 @@ function App() {
                 <Route path="quiz" element={<Quiz />} />
                 <Route path="results" element={<Result />} />
               </Route>
+              <Route path="page-not-found" element={<Error />} />
               <Route path="*" element={<Error />} />
             </Routes>
           </AnswerProvider>
