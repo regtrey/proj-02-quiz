@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const limitStyle = {
+  max: css`
+    border: 1px solid red;
+
+    &:focus {
+      outline: none;
+    }
+  `,
+};
 
 export const Input = styled.input`
   width: 40rem;
@@ -11,4 +21,6 @@ export const Input = styled.input`
   @media screen and (max-width: 768px) {
     width: 70vw;
   }
+
+  ${(props) => limitStyle[props.$limit]}
 `;

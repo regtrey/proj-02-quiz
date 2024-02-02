@@ -50,7 +50,7 @@ const Detail = styled.h4`
   }
 `;
 
-const maxTime = 600;
+const maxTime = 300;
 
 function Details() {
   const [time, setTime] = useState(maxTime);

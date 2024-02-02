@@ -1,21 +1,28 @@
 import styled from 'styled-components';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useQuestion } from '../context/QuestionContext';
 
 import { Input } from './Input';
 import { Button } from './Button';
-import { useNavigate } from 'react-router-dom';
-import { useQuestion } from '../context/QuestionContext';
-import { useEffect } from 'react';
+import { CharLimit } from './CharLimit';
 
-export const StyledForm = styled.form`
+const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+  position: relative;
 `;
+
+const maxChars = 15;
 
 function Form() {
   const navigate = useNavigate();
   const { name, setName } = useQuestion();
+
+  const chars = name.length;
+  const isMaxed = chars > maxChars;
 
   useEffect(
     function () {
@@ -32,12 +39,18 @@ function Form() {
 
   return (
     <StyledForm onSubmit={handleSubmit}>
+      <CharLimit $limit={isMaxed ? 'max' : null}>
+        {chars} / {maxChars}
+      </CharLimit>
+
       <Input
         placeholder="Enter your name"
         value={name}
+        $limit={isMaxed ? 'max' : null}
         onChange={(e) => setName(e.target.value)}
       />
-      <Button size="large" disabled={!name}>
+
+      <Button size="large" disabled={!name || isMaxed}>
         Take Test
       </Button>
     </StyledForm>
