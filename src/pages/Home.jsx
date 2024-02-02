@@ -10,16 +10,31 @@ const StyledHome = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+
+  @media screen and (max-width: 768px) {
+    padding: 10rem 0;
+  }
 `;
 
 const HomeLogo = styled(Logo)`
   font-size: 15rem;
   cursor: default;
+
+  @media screen and (max-width: 768px) {
+    font-size: 10rem;
+  }
 `;
 
 const Subtitle = styled.p`
   font-size: 2.5rem;
   margin-bottom: 6rem;
+
+  @media screen and (max-width: 768px) {
+    width: 80vw;
+    font-size: 2rem;
+    margin-bottom: 3.5rem;
+    text-align: center;
+  }
 `;
 
 function Home() {

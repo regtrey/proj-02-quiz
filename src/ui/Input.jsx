@@ -7,4 +7,8 @@ export const Input = styled.input`
   border-radius: 6px;
   padding: 1.8rem;
   text-align: center;
+
+  @media screen and (max-width: 768px) {
+    width: 70vw;
+  }
 `;

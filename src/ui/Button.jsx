@@ -11,6 +11,10 @@ const sizes = {
     font-size: 2.2rem;
     border-radius: 6px;
     padding: 1.8rem;
+
+    @media screen and (max-width: 768px) {
+      width: 70vw;
+    }
   `,
 };
 
@@ -25,6 +29,10 @@ const type = {
     &:hover {
       background-color: var(--color-brand-500);
       color: var(--color-grey-0);
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 80vw;
     }
   `,
 };

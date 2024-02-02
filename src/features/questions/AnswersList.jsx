@@ -14,14 +14,8 @@ const StyledAnswersList = styled.ul`
 `;
 
 function AnswersList() {
-  const {
-    hasAnswered,
-    setHasAnswered,
-    setIsCorrect,
-    score,
-    setScore,
-    setNumCorrect,
-  } = useAnswer();
+  const { hasAnswered, setHasAnswered, setIsCorrect, setScore, setNumCorrect } =
+    useAnswer();
   const { curQuestion } = useQuestion();
 
   const choices = curQuestion.choices;

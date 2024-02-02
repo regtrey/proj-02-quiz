@@ -11,6 +11,10 @@ const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 3rem;
+  }
 `;
 
 const Count = styled.p`

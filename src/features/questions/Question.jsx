@@ -17,6 +17,10 @@ const QuestionItem = styled.h2`
   width: 80vw;
   font-size: 4rem;
   margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 function Question() {

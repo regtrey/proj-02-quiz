@@ -7,17 +7,31 @@ const StyledMessageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    width: 85vw;
+  }
 `;
 
 const Message = styled.h1`
   font-size: 5rem;
   font-weight: 400;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 3rem;
+  }
 `;
 
 const SubMessage = styled.h2`
   font-size: 3rem;
   font-weight: 400;
   font-style: italic;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 function MessageContainer() {

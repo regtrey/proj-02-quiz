@@ -38,4 +38,10 @@ export const Answer = styled.li`
   &:hover {
     ${(props) => hoverStyle[props.$hasAnswered]}
   }
+
+  @media screen and (max-width: 768px) {
+    height: 6rem;
+    font-size: 2rem;
+    padding: 0 2rem;
+  }
 `;

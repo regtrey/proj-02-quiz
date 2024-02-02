@@ -6,6 +6,11 @@ const StyledHeader = styled.header`
   padding: 0 10rem;
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+    justify-content: center;
+  }
 `;
 
 export const Logo = styled.h1`

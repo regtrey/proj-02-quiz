@@ -11,8 +11,13 @@ const StyledResult = styled.div`
   justify-content: flex-start;
   gap: 4rem;
 
-  @media (min-width: 1450px) {
+  @media screen and (min-width: 1450px) {
     padding: 13rem 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 7rem 2rem;
+    gap: 2rem;
   }
 `;
 
