@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { questions } from '../data/questions';
 
@@ -8,6 +8,7 @@ const numQuestions = questions.length;
 
 function QuestionProvider({ children }) {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [name, setName] = useState('');
 
   const curPage = Number(searchParams.get('question')) || 1;
   const curQuestion = questions[curPage - 1];
@@ -20,6 +21,8 @@ function QuestionProvider({ children }) {
         curQuestion,
         searchParams,
         setSearchParams,
+        name,
+        setName,
       }}
     >
       {children}

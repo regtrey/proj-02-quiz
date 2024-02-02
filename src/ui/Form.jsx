@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import { useState } from 'react';
 
 import { Input } from './Input';
 import { Button } from './Button';
 import { useNavigate } from 'react-router-dom';
+import { useQuestion } from '../context/QuestionContext';
+import { useEffect } from 'react';
 
 export const StyledForm = styled.form`
   display: flex;
@@ -13,14 +14,19 @@ export const StyledForm = styled.form`
 `;
 
 function Form() {
-  const [name, setName] = useState('');
-
   const navigate = useNavigate();
+  const { name, setName } = useQuestion();
+
+  useEffect(
+    function () {
+      setName('');
+    },
+    [setName]
+  );
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!name) return;
-    setName('');
     navigate('/app/quiz');
   }
 

@@ -49,7 +49,7 @@ const GlobalStyles = createGlobalStyle`
         background-color: var(--color-grey-300);
         color: var(--color-grey-0);
         outline: none;
-        cursor: not-allowed;
+        cursor: default;
 
         &:hover {
             border: none;

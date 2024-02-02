@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+import Details from './Details';
+
 const StyledHeader = styled.header`
   border-bottom: 1px solid var(--color-grey-200);
   padding: 0 10rem;
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 
   @media screen and (max-width: 768px) {
-    padding: 0;
-    justify-content: center;
+    padding: 0 2rem;
+    justify-content: space-between;
   }
 `;
 
@@ -33,6 +37,7 @@ function Header() {
           test<Span>IT</Span>
         </Logo>
       </Link>
+      <Details />
     </StyledHeader>
   );
 }

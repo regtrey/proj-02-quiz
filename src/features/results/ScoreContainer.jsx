@@ -5,9 +5,10 @@ import { useAnswer } from '../../context/AnswerContext';
 import { Button } from '../../ui/Button';
 
 const StyledScoreContainer = styled.div`
+  width: 36rem;
   background-color: var(--color-brand-500);
   border-radius: 15px;
-  padding: 4rem 8rem;
+  padding: 4rem 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;

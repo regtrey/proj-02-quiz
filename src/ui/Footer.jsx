@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
   justify-content: space-between;
 
   @media screen and (max-width: 768px) {
-    padding: 0 3rem;
+    padding: 0 2rem;
   }
 `;
 
