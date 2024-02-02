@@ -12,7 +12,8 @@ const StyledHome = styled.div`
   justify-content: flex-start;
 
   @media screen and (max-width: 768px) {
-    padding: 10rem 0;
+    padding: 8rem 0;
+    justify-content: center;
   }
 `;
 
