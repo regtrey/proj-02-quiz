@@ -30,7 +30,7 @@ const Subtitle = styled.p`
   margin-bottom: 6rem;
 
   @media screen and (max-width: 768px) {
-    width: 80vw;
+    width: 70vw;
     font-size: 2rem;
     margin-bottom: 3.5rem;
     text-align: center;

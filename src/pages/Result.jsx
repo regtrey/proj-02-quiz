@@ -16,7 +16,7 @@ const StyledResult = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    padding: 7rem 2rem;
+    padding: 10rem 2rem 7rem;
     gap: 2rem;
   }
 `;
