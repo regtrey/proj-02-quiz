@@ -5,15 +5,17 @@ import { useQuestion } from '../context/QuestionContext';
 import { useAnswer } from '../context/AnswerContext';
 
 const StyledDetails = styled.div`
-  width: 20rem;
+  width: max-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 
   @media screen and (max-width: 768px) {
     width: 15rem;
     flex-direction: column;
     align-items: flex-start;
+    gap: 0;
   }
 `;
 
@@ -50,7 +52,7 @@ const Detail = styled.h4`
   }
 `;
 
-const maxTime = 300;
+const maxTime = 70;
 
 function Details() {
   const [time, setTime] = useState(maxTime);
