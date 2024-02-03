@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useAppInfo } from '../context/AppInfoContext';
 import { useAnswer } from '../context/AnswerContext';
 import { useQuestion } from '../context/QuestionContext';
 
 import { Button } from './Button';
+import MiniSpinner from './MiniSpinner';
 
 const StyledFooter = styled.footer`
   border-top: 1px solid var(--color-grey-200);
@@ -28,6 +30,7 @@ const CountSpan = styled.span`
 function Footer() {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+  const { isSubmitting, setIsSubmitting } = useAppInfo();
   const { hasAnswered, setHasAnswered, isFinish } = useAnswer();
   const { curPage, numQuestions } = useQuestion();
 
@@ -38,7 +41,12 @@ function Footer() {
   }
 
   function handleSubmit() {
-    navigate('/app/results');
+    setIsSubmitting(true);
+    const submitTimeout = setTimeout(() => {
+      setIsSubmitting(false);
+      navigate('/app/results');
+      clearTimeout(submitTimeout);
+    }, 500);
   }
 
   return (
@@ -50,10 +58,11 @@ function Footer() {
       {isFinish ? (
         <Button
           size="small"
+          type="submit"
           onClick={handleSubmit}
-          disabled={!hasAnswered || !isFinish}
+          disabled={!hasAnswered || isSubmitting || !isFinish}
         >
-          Submit
+          Submit {isSubmitting && <MiniSpinner />}
         </Button>
       ) : (
         <Button

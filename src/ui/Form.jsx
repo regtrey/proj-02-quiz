@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { useAppInfo } from '../context/AppInfoContext';
+import { useAnswer } from '../context/AnswerContext';
 
 import { Input } from './Input';
 import { Button } from './Button';
 import { CharLimit } from './CharLimit';
-import { useAnswer } from '../context/AnswerContext';
 
 const StyledForm = styled.form`
   display: flex;
@@ -19,7 +19,8 @@ const maxChars = 15;
 
 function Form() {
   const navigate = useNavigate();
-  const { name, setName, hasStarted, setHasStarted } = useAppInfo();
+  const { name, setName, hasStarted, setHasStarted, setIsLoading } =
+    useAppInfo();
   const { isFinish } = useAnswer();
 
   const chars = name.length;
@@ -30,6 +31,7 @@ function Form() {
     if (!name) return;
 
     setHasStarted(true);
+    setIsLoading(true);
 
     if (hasStarted || isFinish) navigate(-1);
     navigate('/app/quiz');

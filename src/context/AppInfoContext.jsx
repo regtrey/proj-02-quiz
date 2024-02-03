@@ -8,6 +8,8 @@ function AppInfoProvider({ children }) {
   const [name, setName] = useState('');
   const [time, setTime] = useState(maxTime);
   const [hasStarted, setHasStarted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasError, setHasError] = useState(false);
 
   return (
@@ -19,6 +21,10 @@ function AppInfoProvider({ children }) {
         setTime,
         hasStarted,
         setHasStarted,
+        isLoading,
+        setIsLoading,
+        isSubmitting,
+        setIsSubmitting,
         hasError,
         setHasError,
       }}

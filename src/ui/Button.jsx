@@ -26,12 +26,18 @@ const sizes = {
 };
 
 const type = {
+  submit: css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  `,
   finish: css`
     width: 35.5rem;
     font-size: 2.5rem;
+    border: 1px solid var(--color-brand-500);
     background-color: var(--color-grey-0);
     color: var(--color-brand-500);
-    border: 1px solid var(--color-brand-500);
 
     &:hover {
       background-color: var(--color-brand-500);
