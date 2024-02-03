@@ -15,6 +15,14 @@ function AnswerProvider({ children }) {
   const { numQuestions, curPage, searchParams, setSearchParams } =
     useQuestion();
 
+  const rate = (numCorrect / numQuestions) * 100;
+
+  let grade;
+  if (rate >= 90) grade = "🥳 Excellent! You've nailed the test";
+  if (rate >= 70) grade = '🤩 Keep it coming';
+  if (rate >= 60) grade = "😝 You're still fine";
+  if (rate <= 50) grade = "🤕 There's room for improvement";
+
   useEffect(
     function () {
       if (curPage > numQuestions) navigate(-1);
@@ -45,6 +53,8 @@ function AnswerProvider({ children }) {
         setScore,
         numCorrect,
         setNumCorrect,
+        rate,
+        grade,
       }}
     >
       {children}

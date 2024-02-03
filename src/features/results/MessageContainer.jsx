@@ -35,15 +35,15 @@ const SubMessage = styled.h2`
 `;
 
 function MessageContainer() {
-  const { numCorrect } = useAnswer();
+  const { numCorrect, rate, grade } = useAnswer();
   const { numQuestions } = useQuestion();
 
   return (
     <StyledMessageContainer>
-      <Message>🥳 You are born out of EXCELLENCE 🎉</Message>
+      <Message>{grade}</Message>
       <SubMessage>
-        You&apos;ve managed to answer {numCorrect} / {numQuestions} questions
-        correctly!
+        You&apos;ve managed to answer {numCorrect} / {numQuestions} ({rate}%)
+        questions correctly!
       </SubMessage>
     </StyledMessageContainer>
   );

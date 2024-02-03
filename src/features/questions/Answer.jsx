@@ -24,10 +24,11 @@ const hoverStyle = {
 
 export const Answer = styled.li`
   height: 8rem;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   border: 1px solid var(--color-grey-200);
   border-radius: 10px;
   padding: 0 4rem;
+  line-height: 2.8rem;
   display: flex;
   align-items: center;
   transition: all 0.5s;
@@ -40,8 +41,9 @@ export const Answer = styled.li`
   }
 
   @media screen and (max-width: 768px) {
-    height: 6rem;
+    height: max-content;
+    min-height: 6rem;
     font-size: 2rem;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
   }
 `;

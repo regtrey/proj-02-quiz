@@ -17,7 +17,6 @@ function AppLayout() {
 
   useEffect(function () {
     const loadingTimeout = setTimeout(() => setIsLoading(false), 500);
-
     return () => clearTimeout(loadingTimeout);
   }, []);
 
