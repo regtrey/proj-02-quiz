@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 const sizes = {
   small: css`
+    width: 15rem;
     font-size: 2rem;
     border-radius: 8px;
     padding: 1rem;

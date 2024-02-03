@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { Button } from '../ui/Button';
 import { useNavigate } from 'react-router-dom';
 
-const StyledError = styled.div`
+import { Button } from './Button';
+
+const StyledPageNotFound = styled.div`
   height: 100dvh;
   background-color: var(--color-grey-50);
   padding: 10rem 0;
@@ -40,11 +41,11 @@ const ErrorMessage = styled.h2`
   }
 `;
 
-function Error() {
+function PageNotFound() {
   const navigate = useNavigate();
 
   return (
-    <StyledError>
+    <StyledPageNotFound>
       <ErrorSpan>404</ErrorSpan>
       <ErrorContainer>
         <ErrorMessage>Something went wrong! 🤒</ErrorMessage>
@@ -52,8 +53,8 @@ function Error() {
           Go back home
         </Button>
       </ErrorContainer>
-    </StyledError>
+    </StyledPageNotFound>
   );
 }
 
-export default Error;
+export default PageNotFound;

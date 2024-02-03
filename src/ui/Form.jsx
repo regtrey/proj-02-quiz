@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useQuestion } from '../context/QuestionContext';
+import { useAppInfo } from '../context/AppInfoContext';
 
 import { Input } from './Input';
 import { Button } from './Button';
 import { CharLimit } from './CharLimit';
+import { useAnswer } from '../context/AnswerContext';
 
 const StyledForm = styled.form`
   display: flex;
@@ -19,39 +19,43 @@ const maxChars = 15;
 
 function Form() {
   const navigate = useNavigate();
-  const { name, setName } = useQuestion();
+  const { name, setName, hasStarted, setHasStarted } = useAppInfo();
+  const { isFinish } = useAnswer();
 
   const chars = name.length;
   const isMaxed = chars > maxChars;
 
-  useEffect(
-    function () {
-      setName('');
-    },
-    [setName]
-  );
-
   function handleSubmit(e) {
     e.preventDefault();
     if (!name) return;
+
+    setHasStarted(true);
+
+    if (hasStarted || isFinish) navigate(-1);
     navigate('/app/quiz');
   }
 
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <CharLimit $limit={isMaxed ? 'max' : null}>
-        {chars} / {maxChars}
-      </CharLimit>
+      {name && !hasStarted && (
+        <CharLimit $limit={isMaxed ? 'max' : null}>
+          {chars} / {maxChars}
+        </CharLimit>
+      )}
 
-      <Input
-        placeholder="Enter your name"
-        value={name}
-        $limit={isMaxed ? 'max' : null}
-        onChange={(e) => setName(e.target.value)}
-      />
+      {hasStarted || isFinish ? null : (
+        <Input
+          placeholder="Enter your name"
+          value={name}
+          $limit={isMaxed ? 'max' : null}
+          onChange={(e) => setName(e.target.value)}
+        />
+      )}
 
       <Button size="large" disabled={!name || isMaxed}>
-        Take Test
+        {!hasStarted && 'Take Test'}
+        {hasStarted && !isFinish && 'Go back'}
+        {hasStarted && isFinish && 'Go back'}
       </Button>
     </StyledForm>
   );

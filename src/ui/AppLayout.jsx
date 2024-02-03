@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { Outlet } from 'react-router-dom';
-import { useQuestion } from '../context/QuestionContext';
-import Error from './Error';
+import { useAppInfo } from '../context/AppInfoContext';
+
+import PageNotFound from './PageNotFound';
 
 const StyledAppLayout = styled.div`
   height: 100dvh;
@@ -10,9 +11,9 @@ const StyledAppLayout = styled.div`
 `;
 
 function AppLayout() {
-  const { hasError } = useQuestion();
+  const { hasError } = useAppInfo();
 
-  if (hasError) return <Error />;
+  if (hasError) return <PageNotFound />;
 
   return (
     <StyledAppLayout>

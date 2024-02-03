@@ -1,6 +1,7 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { questions } from '../data/questions';
+import { useAppInfo } from './AppInfoContext';
 
 const QuestionContext = createContext();
 
@@ -8,9 +9,7 @@ const numQuestions = questions.length;
 
 function QuestionProvider({ children }) {
   const [searchParams, setSearchParams] = useSearchParams();
-
-  const [name, setName] = useState('');
-  const [hasError, setHasError] = useState(false);
+  const { name, setHasError } = useAppInfo();
 
   const curPage = Number(searchParams.get('question')) || 1;
   const curQuestion =
@@ -32,10 +31,6 @@ function QuestionProvider({ children }) {
         curQuestion,
         searchParams,
         setSearchParams,
-        name,
-        setName,
-        hasError,
-        setHasError,
       }}
     >
       {children}

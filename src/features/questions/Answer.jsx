@@ -24,9 +24,9 @@ const hoverStyle = {
 
 export const Answer = styled.li`
   height: 8rem;
+  font-size: 2.5rem;
   border: 1px solid var(--color-grey-200);
   border-radius: 10px;
-  font-size: 3rem;
   padding: 0 4rem;
   display: flex;
   align-items: center;

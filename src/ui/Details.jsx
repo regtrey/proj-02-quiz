@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useQuestion } from '../context/QuestionContext';
 import { useAnswer } from '../context/AnswerContext';
+import { useAppInfo } from '../context/AppInfoContext';
 
 const StyledDetails = styled.div`
   width: max-content;
@@ -52,14 +52,10 @@ const Detail = styled.h4`
   }
 `;
 
-const maxTime = 300;
-
 function Details() {
-  const [time, setTime] = useState(maxTime);
-
   const navigate = useNavigate();
+  const { name, time, setTime } = useAppInfo();
   const { score } = useAnswer();
-  const { name } = useQuestion();
 
   const minutes = time === 60 ? 1 : Math.floor(time / 60);
   const seconds = time % 60 === 0 ? 0 : time % 60;

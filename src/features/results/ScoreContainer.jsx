@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAnswer } from '../../context/AnswerContext';
 
 import { Button } from '../../ui/Button';
+import { useAppInfo } from '../../context/AppInfoContext';
 
 const StyledScoreContainer = styled.div`
   width: 36rem;
@@ -44,10 +45,13 @@ const Score = styled.h1`
 
 function ScoreContainer() {
   const navigate = useNavigate();
+  const { setHasStarted, setName } = useAppInfo();
   const { setIsFinish, score, setScore, setNumCorrect } = useAnswer();
 
   function handleFinish() {
+    setHasStarted(false);
     setIsFinish(false);
+    setName('');
     setScore(0);
     setNumCorrect(0);
     navigate('/');

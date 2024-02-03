@@ -7,7 +7,7 @@ import AnswersList from './AnswersList';
 
 const StyledQuestionContainer = styled.main`
   height: 100%;
-  padding-top: 4rem;
+  padding: 4rem 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -15,7 +15,7 @@ const StyledQuestionContainer = styled.main`
 
 const QuestionItem = styled.h2`
   width: 80vw;
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin: 0 auto;
 
   @media screen and (max-width: 768px) {
