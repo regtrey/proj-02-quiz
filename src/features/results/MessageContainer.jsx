@@ -41,10 +41,10 @@ function MessageContainer() {
   return (
     <StyledMessageContainer>
       <Message>{grade}</Message>
-      <SubMessage>
+      {/* <SubMessage>
         You&apos;ve managed to answer {numCorrect} / {numQuestions} ({rate}%)
         questions correctly!
-      </SubMessage>
+      </SubMessage> */}
     </StyledMessageContainer>
   );
 }

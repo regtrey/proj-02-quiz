@@ -21,7 +21,7 @@ function AnswerProvider({ children }) {
   if (rate >= 80) grade = "🥳 Excellent! You've nailed the test";
   if (rate < 80 && rate >= 70) grade = '🤩 Keep it coming';
   if (rate < 70 && rate >= 60) grade = "😝 You're still fine";
-  if (rate < 60) grade = "🤕 There's room for improvement";
+  if (rate < 60) grade = "🤕 There's a lot of room for improvement";
 
   useEffect(
     function () {

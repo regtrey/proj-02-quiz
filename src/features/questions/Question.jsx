@@ -15,7 +15,7 @@ const StyledQuestionContainer = styled.main`
 
 const QuestionItem = styled.h2`
   width: 80vw;
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin: 0 auto;
 
   @media screen and (max-width: 768px) {
