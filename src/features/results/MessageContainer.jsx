@@ -9,8 +9,17 @@ const StyledMessageContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 850px) {
+    width: 75vw;
+  }
+
+  @media screen and (max-width: 767px) {
     width: 85vw;
+  }
+
+  @media screen and (max-width: 360px) {
+    width: 90vw;
+    gap: 1rem;
   }
 `;
 
@@ -22,6 +31,10 @@ const Message = styled.h1`
   @media screen and (max-width: 768px) {
     font-size: 3rem;
   }
+
+  @media screen and (max-width: 360px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const SubMessage = styled.h2`
@@ -32,6 +45,10 @@ const SubMessage = styled.h2`
 
   @media screen and (max-width: 768px) {
     font-size: 2rem;
+  }
+
+  @media screen and (max-width: 360px) {
+    font-size: 1.75rem;
   }
 `;
 

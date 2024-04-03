@@ -22,5 +22,11 @@ export const Input = styled.input`
     width: 70vw;
   }
 
+  @media screen and (max-width: 360px) {
+    font-size: 1.75rem;
+    padding: 1.4rem;
+    margin-bottom: -0.5rem;
+  }
+
   ${(props) => limitStyle[props.$limit]}
 `;

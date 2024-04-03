@@ -15,9 +15,19 @@ const StyledResult = styled.div`
     padding: 13rem 0;
   }
 
-  @media screen and (max-width: 768px) {
-    padding: 10rem 2rem 7rem;
+  @media screen and (max-width: 850px) {
+    gap: 3rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    height: max-content;
     gap: 2rem;
+  }
+
+  @media screen and (max-width: 360px) {
+    height: max-content;
+    padding: 5rem 1rem;
+    gap: 1rem;
   }
 `;
 

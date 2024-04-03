@@ -37,6 +37,11 @@ const sizes = {
     @media screen and (max-width: 768px) {
       width: 70vw;
     }
+
+    @media screen and (max-width: 360px) {
+      font-size: 1.75rem;
+      padding: 1.5rem;
+    }
   `,
 };
 
@@ -65,6 +70,10 @@ const type = {
 
     @media screen and (max-width: 767px) {
       width: 80vw;
+    }
+
+    @media screen and (max-width: 360px) {
+      width: 60vw;
     }
   `,
 };
