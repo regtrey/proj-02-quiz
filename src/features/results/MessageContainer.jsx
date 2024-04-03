@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { useAnswer } from '../../context/AnswerContext';
+
 import { useQuestion } from '../../context/QuestionContext';
+import { useAnswer } from '../../context/AnswerContext';
 
 const StyledMessageContainer = styled.div`
   display: flex;
@@ -35,16 +36,16 @@ const SubMessage = styled.h2`
 `;
 
 function MessageContainer() {
-  const { numCorrect, rate, grade } = useAnswer();
   const { numQuestions } = useQuestion();
+  const { numCorrect, rate, grade } = useAnswer();
 
   return (
     <StyledMessageContainer>
       <Message>{grade}</Message>
-      {/* <SubMessage>
+      <SubMessage>
         You&apos;ve managed to answer {numCorrect} / {numQuestions} ({rate}%)
         questions correctly!
-      </SubMessage> */}
+      </SubMessage>
     </StyledMessageContainer>
   );
 }

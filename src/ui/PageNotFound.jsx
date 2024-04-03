@@ -11,6 +11,11 @@ const StyledPageNotFound = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+
+  @media screen and (max-width: 360px) {
+    padding: 0 2rem;
+    justify-content: center;
+  }
 `;
 
 const ErrorSpan = styled.span`
@@ -19,9 +24,17 @@ const ErrorSpan = styled.span`
   letter-spacing: -10px;
   margin-bottom: -5rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 850px) {
+    font-size: 20rem;
+  }
+
+  @media screen and (max-width: 767px) {
     font-size: 15rem;
     margin-bottom: -2rem;
+  }
+
+  @media screen and (max-width: 360px) {
+    font-size: 12rem;
   }
 `;
 
@@ -30,14 +43,27 @@ const ErrorContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+
+  @media screen and (max-width: 360px) {
+    gap: 1.5rem;
+  }
 `;
 
 const ErrorMessage = styled.h2`
   font-size: 5rem;
   font-weight: 400;
+  text-align: center;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 850px) {
+    font-size: 3rem;
+  }
+
+  @media screen and (max-width: 767px) {
     font-size: 2.5rem;
+  }
+
+  @media screen and (max-width: 360px) {
+    font-size: 1.75rem;
   }
 `;
 

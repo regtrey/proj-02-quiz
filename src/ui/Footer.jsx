@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+
 import { useAppInfo } from '../context/AppInfoContext';
-import { useAnswer } from '../context/AnswerContext';
 import { useQuestion } from '../context/QuestionContext';
+import { useAnswer } from '../context/AnswerContext';
 
 import { Button } from './Button';
 import MiniSpinner from './MiniSpinner';
@@ -14,13 +15,25 @@ const StyledFooter = styled.footer`
   align-items: center;
   justify-content: space-between;
 
+  @media screen and (max-width: 850px) {
+    padding: 0 4rem;
+  }
+
   @media screen and (max-width: 768px) {
     padding: 0 2rem;
+  }
+
+  @media screen and (max-width: 360px) {
+    padding: 0 1rem;
   }
 `;
 
 const Count = styled.p`
   font-size: 1.5rem;
+
+  @media screen and (max-width: 360px) {
+    font-size: 1.25rem;
+  }
 `;
 
 const CountSpan = styled.span`
@@ -30,9 +43,10 @@ const CountSpan = styled.span`
 function Footer() {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+
   const { isSubmitting, setIsSubmitting } = useAppInfo();
-  const { hasAnswered, setHasAnswered, isFinish } = useAnswer();
   const { curPage, numQuestions } = useQuestion();
+  const { hasAnswered, setHasAnswered, isFinish } = useAnswer();
 
   function handleNext() {
     setHasAnswered(false);

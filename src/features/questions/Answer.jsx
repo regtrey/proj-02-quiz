@@ -46,4 +46,11 @@ export const Answer = styled.li`
     font-size: 2rem;
     padding: 1rem 2rem;
   }
+
+  @media screen and (max-width: 360px) {
+    height: max-content;
+    min-height: 4rem;
+    font-size: 1.5rem;
+    padding: 0.8rem 1.15rem;
+  }
 `;

@@ -11,9 +11,16 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
 
+  @media screen and (max-width: 850px) {
+    padding: 0 4rem;
+  }
+
   @media screen and (max-width: 768px) {
     padding: 0 2rem;
-    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 360px) {
+    padding: 0 1rem;
   }
 `;
 
@@ -21,6 +28,10 @@ export const Logo = styled.h1`
   font-size: 6rem;
   font-weight: 100;
   cursor: pointer;
+
+  @media screen and (max-width: 360px) {
+    font-size: 4rem;
+  }
 `;
 
 export const Span = styled.span`

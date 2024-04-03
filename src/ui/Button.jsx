@@ -6,12 +6,27 @@ const sizes = {
     font-size: 2rem;
     border-radius: 8px;
     padding: 1rem;
+
+    @media screen and (max-width: 360px) {
+      width: 12rem;
+      font-size: 1.5rem;
+    }
   `,
   medium: css`
     width: 30rem;
     font-size: 2rem;
     border-radius: 6px;
     padding: 1.6rem;
+
+    @media screen and (min-width: 768px) and (max-width: 850px) {
+      width: 40rem;
+      font-size: 3rem;
+    }
+
+    @media screen and (max-width: 360px) {
+      width: 60vw;
+      padding: 1.4rem;
+    }
   `,
   large: css`
     width: 40rem;
@@ -44,7 +59,11 @@ const type = {
       color: var(--color-grey-0);
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 850px) {
+      width: 36rem;
+    }
+
+    @media screen and (max-width: 767px) {
       width: 80vw;
     }
   `,

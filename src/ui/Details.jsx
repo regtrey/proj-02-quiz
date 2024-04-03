@@ -17,6 +17,14 @@ const StyledDetails = styled.div`
     align-items: flex-start;
     gap: 0;
   }
+
+  @media screen and (max-width: 360px) {
+    width: 15rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
+  }
 `;
 
 const Name = styled.h3`
@@ -40,6 +48,12 @@ const DetailsContainer = styled.div`
     flex-direction: row;
     justify-content: flex-start;
     gap: 1rem;
+  }
+
+  @media screen and (max-width: 360px) {
+    width: 9rem;
+    flex-direction: column;
+    gap: 0;
   }
 `;
 
@@ -76,7 +90,7 @@ function Details() {
         clearInterval(timeLeft);
       };
     },
-    [time, navigate]
+    [time, setTime, navigate]
   );
 
   return (

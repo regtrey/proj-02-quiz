@@ -11,6 +11,10 @@ const StyledQuestionContainer = styled.main`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media screen and (max-width: 360px) {
+    padding: 3rem 0;
+  }
 `;
 
 const QuestionItem = styled.h2`
@@ -20,6 +24,10 @@ const QuestionItem = styled.h2`
 
   @media screen and (max-width: 768px) {
     font-size: 2.5rem;
+  }
+
+  @media screen and (max-width: 360px) {
+    font-size: 2rem;
   }
 `;
 

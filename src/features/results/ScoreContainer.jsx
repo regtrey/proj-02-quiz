@@ -15,7 +15,7 @@ const StyledScoreContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     width: 80vw;
     padding: 3rem 0;
     margin-bottom: 2rem;
@@ -45,12 +45,13 @@ const Score = styled.h1`
 
 function ScoreContainer() {
   const navigate = useNavigate();
-  const { setHasStarted, setName } = useAppInfo();
+  const { setTime, maxTime, setHasStarted, setName } = useAppInfo();
   const { setIsFinish, score, setScore, setNumCorrect } = useAnswer();
 
   function handleFinish() {
     setHasStarted(false);
     setIsFinish(false);
+    setTime(maxTime);
     setName('');
     setScore(0);
     setNumCorrect(0);

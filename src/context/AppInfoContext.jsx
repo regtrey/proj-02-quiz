@@ -19,6 +19,7 @@ function AppInfoProvider({ children }) {
         setName,
         time,
         setTime,
+        maxTime,
         hasStarted,
         setHasStarted,
         isLoading,
